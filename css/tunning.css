@@ -1,0 +1,25 @@
+#content_section {
+    background: #666;
+    width: 30%;
+    height: 120px;
+    display: inline-block;
+    margin: 5px;
+}
+#content_section:hover{
+    background: #333;
+}
+#content_section p{
+    text-shadow: 0 0 0.2em #999;
+    text-align: left;
+    margin-left: 10px;
+    color: #FFF;
+}
+p.cite{
+    margin: 10px;
+    font-style: italic;
+}
+div.twocolumn {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
