@@ -8,3 +8,6 @@ Curso de desarrollo mobile que aborda la siguientes tecnologías.
 - Desarrollo basico de aplicaciones Node.js + WebSockets
 - Conocimientos bases del sistema de control de versiones Git (github)
 
+Presentación
+=======
+http://lesthack.github.com/CMobile/
