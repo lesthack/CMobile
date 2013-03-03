@@ -23,3 +23,6 @@ div.twocolumn {
     display: inline-block;
     vertical-align: top;
 }
+.left{
+    text-align: left;
+}

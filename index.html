@@ -44,6 +44,7 @@
 					<p>
 						<small>Impartido por <a href="http://lesthack.com.mx">Jorge Luis Hernández C.</a> / <a href="http://twitter.com/lesthack">@lesthack</a></small>
 					</p>
+					<p><small>Marzo 2013</small></p>
 				</section>
 
 				<section>
@@ -71,7 +72,7 @@
 						<p>Desarrollo bajo el <a href="http://developer.android.com/sdk/index.html">SDK de Android</a> para aplicaciones nativas, poderosas y veloces.</p>
 					</section>
 					<section>
-						<h2><a href="http://phonegap.com/">PhoneGap</a> + <a href="http://jquerymobile.com/">Jquery Mobile</a></h2>
+						<h2><a href="http://phonegap.com/">PhoneGap</a> + <a href="http://jquerymobile.com/">Jquery Mobile + Algo mas</a></h2>
 						<p>Desarrollo bajo tecnologías web aplicadas en dispositivos móviles. Rápidas, bonitas y faciles de crear.</p>
 					</section>
 					<section>
@@ -108,6 +109,13 @@
 							<li class="fragment">Jquery Mobile 1.3+ <a href="http://jquerymobile.com/download/">download</a></li>
 							<li class="fragment">Node.js <a href="http://nodejs.org/download/">download</a></li>
 							<li class="fragment">Sublime Text 2 <a href="http://www.sublimetext.com/2">download</a></li>
+						</ol>
+					</section>
+					<section>
+						<h2>Guias de instalación</h2>
+						<ol>
+							<li><a href="http://developer.android.com/sdk/installing/installing-adt.html">Guía</a> de como instalar el plugin ADT en ECLIPSE.</li>
+							<li><a href="http://docs.phonegap.com/en/2.5.0/guide_getting-started_index.md.html#Getting%20Started%20Guides">Guías</a> de como iniciar con PhoneGap.</li>
 						</ol>
 					</section>
 				</section>
@@ -151,7 +159,7 @@
 					</a>
 					<a id="content_section" href="#">
 						<p>Sesión 3</p>
-						<p><small>Node.js + socket.io</small></p>
+						<p><small>Node.js + Utilerias</small></p>
 					</a>
 					<a id="content_section" href="#">
 						<p>Sesión 4</p>
@@ -224,61 +232,74 @@
 					</div>
 				</section>
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
+				<section style="font-size: 70%;" class="left">
+					<h2>Aprendamos entonces Jquery Mobile</h2>
+					<p>Guía Jquery Mobile</p>
 					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
+						<li>Entendiendo jquery mobile</li>
+						<li>Headers and footers</li>
+						<li>Una sencilla Aplicación</li>
+						<li>Los formularios</li>
+						<li>Listas</li>
+						<li>Autocompletado</li>
+						<li>Dialogos</li>
+						<li>Panels</li>
+						<li>Acordiones</li>
+						<li>Toolbars</li>
+						<li>Grids</li>
+						<li>Transiciones</li>
 					</ol>
 				</section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-							<section data-markdown>
-							  ## Markdown support
-
-							  For those of you who like that sort of thing.
-							  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-							</section>
-					</script>
+				<section>
+					<h2>Estuctura Aplicación</h2>
+					<div class="left">
+						<ul>
+							<li>
+								ProyectoWeb
+								<ul>
+									<li>index.html</li>
+									<li>
+										Javascript
+										<ul>
+											<li>main.js</li>
+											<li>lib.js</li>
+										</ul>
+									</li>
+									<li>
+										CSS
+										<ul>
+											<li>style.css</li>
+										</ul>
+									</li>
+									<li>
+										Images
+										<ul>
+											<li>logo.png</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> -
-						<a href="?#/themes">Default</a>
-					</p>
+				<section>
+					<h2>Iniciando un proyecto con PhoneGap</h2>
+					<p>Nota: el directorio del SDK deberá esta incluido en la variable PATH Environment del Sistema Operativo.</p>
+					<pre>
+						<code contenteditable>create FirstApp</code>
+					</pre>
 					<p>
 						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
+							<a href="http://docs.phonegap.com/en/2.5.0/guide_getting-started_android_index.md.html#Getting%20Started%20with%20Android">Como incluir el directorio del SDK en la variable Path Environment.</a>
 						</small>
 					</p>
+				</section>
+
+				<section>
+					<h2>Estructura de un proyecto PhoneGap</h2>
+					<img src="images/FirstApp.png" />
 				</section>
 
 				<section>
