@@ -299,7 +299,8 @@
 
 				<section>
 					<h2>Estructura de un proyecto PhoneGap</h2>
-					<img src="images/FirstApp.png" />
+					<a href="images/FirstApp.png" class="boxImage"><img src="images/FirstApp.png" class="inline2" /></a>
+					<a href="images/FirstApp2.png" class="boxImage"><img src="images/FirstApp2.png" class="inline2" /></a>
 				</section>
 
 				<section>
@@ -469,7 +470,7 @@ function linkify( selector ) {
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
 
@@ -497,6 +498,11 @@ function linkify( selector ) {
 			});
 
 		</script>
-
+		<div id="BoxImages" class="hide" onClick="this.className='hide'">
+			<div id="shadow" ></div>
+			<div id="box">
+				<img id="boximage" src="" />
+			</div>
+		</div>
 	</body>
 </html>

@@ -26,3 +26,27 @@ div.twocolumn {
 .left{
     text-align: left;
 }
+.inline2{
+    width: 45%;
+    display: inline;
+}
+.hide{
+    display: none;
+}
+#shadow{
+    background: #000;
+    opacity: 0.5;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#box{
+    z-index: 1001;
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+}

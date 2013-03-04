@@ -320,6 +320,9 @@ var Reveal = (function(){
 		// Start auto-sliding if it's enabled
 		cueAutoSlide();
 
+		// add box images
+		boxImages();
+
 		// Notify listeners that the presentation is ready but use a 1ms
 		// timeout to ensure it's not fired synchronously after #initialize()
 		setTimeout( function() {
@@ -330,6 +333,31 @@ var Reveal = (function(){
 			} );
 		}, 1 );
 
+	}
+
+	/**
+	 * Box Images configuration
+	 */
+	function boxImages(){
+		var boximages = document.getElementsByClassName("boxImage");
+
+		for(var i=0; i<boximages.length; i++){
+			if( toType(boximages[0]) != "htmlanchorelement" ) continue;
+
+			boximages[i].onclick = function(){
+				var href = this.getAttribute("href");
+				if(href){
+					document.getElementById("boximage").src = href;
+					document.getElementById("BoxImages").className = "";
+				}
+
+				return false;
+			}
+		}
+	}
+
+	function toType(obj) {
+	  return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
 	}
 
 	/**
@@ -1920,3 +1948,4 @@ var Reveal = (function(){
 	};
 
 })();
+
