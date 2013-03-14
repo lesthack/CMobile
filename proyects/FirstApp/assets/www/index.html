@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <title>MyFirstApp</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile-1.3.0.css" />
+        <link rel="shortcut icon" href="docs/favicon.ico">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+        <script type="text/javascript" src="cordova-2.4.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.0.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+            <div data-role="header" data-position="fixed" >
+                <h4>Referencia</h4>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-ajax="true" data-inset="true">
+                    <li data-role="list-divider">Jquery Mobile</li>
+                    <li><a href="#buttons" data-transition="slide">Buttons</a></li>
+                    <li><a href="#headers_footers" >Headers and Footers</a></li>
+                    <li><a href="#forms" >Forms</a></li>
+                    <li><a href="#listviews" >Listviews</a></li>
+                    <li><a href="#autocomplete" >Autocomplete</a></li>
+                    <li><a href="#dialogs" >Dialogs</a></li>
+                    <li><a href="#panels" >Panels</a></li>
+                    <li><a href="#controlgroups" >Controlgroups</a></li>
+                    <li><a href="#accordion" >Accordion</a></li>
+                    <li><a href="#collapsibles" >Collapsibles</a></li>
+                    <li><a href="#loaders" >Loaders</a></li>
+                    <li><a href="#navbar" >Navbar</a></li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+        <div data-role="page" id="buttons">
+            <div data-role="header" data-position="fixed">
+                <h4>Buttons</h4>
+            </div>
+            <div data-role="content">
+                <a href="#" data-role="button">Tipo link</a>
+                <button>Tipo button</button>
+                <form>
+                    <input type="submit" value="Tipo Input-button" />
+                </form>
+                <hr/>
+                <a href="#" data-role="button" data-inline="true">Si</a>
+                <a href="#" data-role="button" data-inline="true">No</a>
+                <hr/>
+                <a href="#" data-role="button" data-inline="true" data-theme="a">Tema A</a>
+                <a href="#" data-role="button" data-inline="true" data-theme="b">Tema B</a>
+                <hr/>
+                <a href="#" data-role="button" data-inline="true" data-mini="true">Button mini</a>
+                <hr/>
+                Iconos:
+                <a href="#" data-role="button" data-icon="plus" data-iconpos="notext" data-theme="c" data-inline="true">Plus</a>
+                <a href="#" data-role="button" data-icon="minus" data-iconpos="notext" data-theme="c" data-inline="true">Minus</a>
+                <a href="#" data-role="button" data-icon="grid" data-iconpos="right" data-theme="c" data-inline="true">right</a>
+                <hr/>
+                <div data-role="controlgroup">
+                    <a href="#" data-role="button">Botón 1</a>
+                    <a href="#" data-role="button" data-icon="grid" data-iconpos="right">Botón con icon</a>
+                </div>
+                <hr/>
+                <div data-role="controlgroup" data-type="horizontal" data-mini="false">
+                    <a href="#" data-role="button" data-iconpos="notext" data-icon="check">Si</a>
+                    <a href="#" data-role="button" data-iconpos="notext" data-icon="back">No</a>
+                    <a href="#" data-role="button" data-iconpos="notext" data-icon="grid">Tal vez</a>
+                </div>
+                <hr/>
+                <a href="#" data-role="button" data-icon="back" data-rel="back">Regresar</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+    </body>
+</html>
+
