@@ -65,6 +65,19 @@
                 <h4>MyFirstApp</h4>
             </div>
         </div>
+        <div data-role="page" id="headers_footers">
+            <div data-role="header" data-position="fixed">
+                <a href="#" data-role="button" data-icon="grid" data-mini="true" data-iconpos="notext">Config</a>
+                <h4>Headers Footers</h4>
+                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
+            </div>
+            <div data-role="content">
+
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
         <div data-role="page" id="buttons">
             <div data-role="header" data-position="fixed">
                 <h4>Buttons</h4>
@@ -106,14 +119,42 @@
                 <h4>MyFirstApp</h4>
             </div>
         </div>
-        <div data-role="page" id="headers_footers">
+        <div data-role="page" id="forms">
             <div data-role="header" data-position="fixed">
-                <a href="#" data-role="button" data-icon="grid" data-mini="true" data-iconpos="notext">Config</a>
-                <h4>Headers Footers</h4>
-                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back">Back</a>
+                <h4>Forms</h4>
+                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
             </div>
             <div data-role="content">
-                ejem
+                <form id="formulario" name="formulario" action="">
+                    <p>slider:</p>
+                    <input type="range" id="rango" name="rango" value="50" min="0" max="100" step="10" data-mini="true" data-theme="b" data-track-theme="a" />
+                    <p>range slider</p>
+                    <div data-role="rangeslider" data-mini="true" data-theme="b">
+                        <input type="range" name="range-1a" id="range-1a" min="0" max="100" value="40">
+                        <input type="range" name="range-1b" id="range-1b" min="0" max="100" value="80">
+                    </div>
+                    <p>Flip Switch</p>
+                    <select name="slider" id="slider" data-role="slider" data-mini="true">
+                        <option value="off">Off</option>
+                        <option value="on" selected="selected">On</option>
+                    </select>
+                    <p>Checkbox</p>
+                    <input type="checkbox" name="checkbox-mini-0" id="checkbox-mini-0" data-mini="true">
+                    <label for="checkbox-mini-0">I agree</label>
+                    <fieldset data-role="controlgroup" data-type="vertical" data-iconpos="right" data-mini="true">
+                        <input type="checkbox" name="uno" id="uno" data-theme="a"><label for="uno">Uno</label>
+                        <input type="checkbox" name="dos" id="dos" ><label for="dos">dos</label>
+                        <input type="checkbox" name="tres" id="tres" ><label for="tres">tres</label>
+                    </fieldset>
+                    <p>Radiobuttons</p>
+                    <input type="radio" name="radio-mini-0" id="radio-mini-0" data-mini="true">
+                    <label for="radio-mini-0">I agree</label>
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-iconpos="left" data-mini="true">
+                        <input type="radio" name="radios" id="radiouno" ><label for="radiouno">Uno</label>
+                        <input type="radio" name="radios" id="radiodos" ><label for="radiodos">dos</label>
+                        <input type="radio" name="radios" id="radiotres" ><label for="radiotres">tres</label>
+                    </fieldset>
+                </form>
             </div>
             <div data-role="footer" data-position="fixed">
                 <h4>MyFirstApp</h4>
