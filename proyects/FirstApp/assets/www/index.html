@@ -40,9 +40,6 @@
 
     </head>
     <body>
-        <div data-role="panel" id="mypanel">
-            Ejemplo panel
-        </div>
         <div data-role="page" id="main">
             <div data-role="header" data-position="fixed" >
                 <h4>Referencia</h4>
@@ -56,11 +53,8 @@
                     <li><a href="#listviews" >Listviews</a></li>
                     <li><a href="#dialogs" >Dialogs</a></li>
                     <li><a href="#panels" >Panels</a></li>
-                    <li><a href="#controlgroups" >Controlgroups</a></li>
-                    <li><a href="#accordion" >Accordion</a></li>
-                    <li><a href="#collapsibles" >Collapsibles</a></li>
-                    <li><a href="#loaders" >Loaders</a></li>
-                    <li><a href="#navbar" >Navbar</a></li>
+                    <li><a href="http://jquerymobile.com/demos/1.3.0/" >Otros Controles</a></li>
+
                 </ul>
             </div>
             <div data-role="footer" data-position="fixed">
@@ -156,6 +150,17 @@
                         <input type="radio" name="radios" id="radiodos" ><label for="radiodos">dos</label>
                         <input type="radio" name="radios" id="radiotres" ><label for="radiotres">tres</label>
                     </fieldset>
+                    <p>Text</p>
+                    <label>Ejemplo:</label>
+                    <input type="text" data-clear-btn="true" id="" name="" placeholder="Introduce cualquier texto" />
+                    <label>Buscar:</label>
+                    <input type="search" data-clear-btn="true" id="" name="" />
+                    <label>Area de Texto:</label>
+                    <textarea id="" name=""></textarea>
+                    <label>Fecha</label>
+                    <input type="date" data-clear-btn="true" name="" id="" value="" />
+                    <label for="color-1">Color:</label>
+                    <input type="color" data-clear-btn="false" name="color-1" id="color-1" value="">
                 </form>
             </div>
             <div data-role="footer" data-position="fixed">
@@ -212,7 +217,7 @@
         </div>
         <div data-role="page" id="dialogs">
             <div data-role="header" data-position="fixed">
-                <h4>Forms</h4>
+                <h4>Dialogs</h4>
                 <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
             </div>
             <div data-role="content">
@@ -234,23 +239,15 @@
             </div>
         </div>
         <div data-role="page" id="panels">
+            <div data-role="panel" id="mypanel" data-display="push" data-position="right">
+                Ejemplo panel
+            </div>
             <div data-role="header" data-position="fixed">
-                <h4>Forms</h4>
+                <h4>Panel</h4>
                 <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
             </div>
             <div data-role="content">
-
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <h4>MyFirstApp</h4>
-            </div>
-        </div>
-        <div data-role="page" id="controlgroups">
-            <div data-role="header" data-position="fixed">
-                <h4>Forms</h4>
-                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
-            </div>
-            <div data-role="content">
+                <a href="#mypanel" data-role="button">Ejemplo</a>
             </div>
             <div data-role="footer" data-position="fixed">
                 <h4>MyFirstApp</h4>
@@ -267,34 +264,26 @@
                 <h4>MyFirstApp</h4>
             </div>
         </div>
-        <div data-role="page" id="collapsibles">
+        <div data-role="page" id="accordion">
             <div data-role="header" data-position="fixed">
-                <h4>Forms</h4>
+                <h4>Accordion</h4>
                 <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
             </div>
             <div data-role="content">
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <h4>MyFirstApp</h4>
-            </div>
-        </div>
-        <div data-role="page" id="loaders">
-            <div data-role="header" data-position="fixed">
-                <h4>Forms</h4>
-                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
-            </div>
-            <div data-role="content">
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <h4>MyFirstApp</h4>
-            </div>
-        </div>
-        <div data-role="page" id="navbar">
-            <div data-role="header" data-position="fixed">
-                <h4>Forms</h4>
-                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
-            </div>
-            <div data-role="content">
+                <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-mini="true">
+                    <div data-role="collapsible">
+                        <h3>Icon set on the set</h3>
+                        <p>Specify the open and close icons on the set to apply it to all the collapsibles within.</p>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Icon set on the set</h3>
+                        <p>This collapsible also gets the icon from the set.</p>
+                    </div>
+                    <div data-role="collapsible" data-collapsed-icon="gear" data-expanded-icon="delete">
+                        <h3>Icon set on this collapsible</h3>
+                        <p>The icons here are applied to this collapsible specifically, thus overriding the set icons.</p>
+                    </div>
+                </div>
             </div>
             <div data-role="footer" data-position="fixed">
                 <h4>MyFirstApp</h4>
