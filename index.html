@@ -135,7 +135,7 @@
 						<p>Sesión 3</p>
 						<p><small>PhoneGap + Jquery Mobile Parte 1</small></p>
 					</a>
-					<a id="content_section" href="#">
+					<a id="content_section" href="#/17">
 						<p>Sesión 4</p>
 						<p><small>PhoneGap + Jquery Mobile Parte 2</small></p>
 					</a>
@@ -154,7 +154,7 @@
 						<p>Sesión 1</p>
 						<p><small>PhoneGap + Jquery Mobile Parte 1</small></p>
 					</a>
-					<a id="content_section" href="#">
+					<a id="content_section" href="#/17">
 						<p>Sesión 2</p>
 						<p><small>PhoneGap + Jquery Mobile Parte 2</small></p>
 					</a>
@@ -546,11 +546,16 @@
 					</ol>
 					<p>Uso de Phonegap</p>
 					<ol>
-						<li>Accediendo a los recursos de Phonegap</li>
+						<li>Accediendo a los recursos de PhoneGap</li>
 						<li>Empaquetar</li>
 						<li>Personalizar Apps Finales</li>
 					</ol>
 					<p>Proyecto: App Cinepolis</p>
+					<p>
+						<small>
+							Para profundizar en los temas, se recomienda acceder a la documentación oficial de las tecnologías.
+							<a href="http://docs.phonegap.com/en/2.5.0/index.html">Phonegap</a> y <a href="http://jquerymobile.com/">Jquery Mobile.</a>.</small>
+					</p>
 				</section>
 				<section>
 					<h2>jquery core $()</h2>
@@ -656,6 +661,10 @@ $("string").on("swipeleft", function(event){
 					</pre>
 				</section>
 				<section>
+					<h2>Construyendo Nuestra App</h2>
+					<img src="images/nexus4.gif" />
+				</section>
+				<section>
 					<h2>Usando los recursos del dispositivo</h2>
 					<div class="twocolumn">
 						<img src="images/nexus4.png"  />
@@ -673,6 +682,129 @@ $("string").on("swipeleft", function(event){
 							<li class="fragment">Etc.</li>
 						</ul>
 					</div>
+				</section>
+				<section>
+					<h2>Phonegap: Cámara</h2>
+					<p>app/AndroidManifest</p>
+					<pre style="font-size: 50%;">
+&lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;
+					</pre>
+					<p>app/res/xml/config.xml</p>
+					<pre style="font-size: 50%;">
+&lt;plugin name="Camera" value="org.apache.cordova.CameraLauncher" /&gt;
+					</pre>
+					<p>Javascript</p>
+					<pre>
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI });
+
+function onSuccess(imageURI) {
+    var image = document.getElementById('myImage');
+    image.src = imageURI;
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+					</pre>
+				</section>
+				<section>
+					<h2>Phonegap: Acelerómetro</h2>
+					<p>app/res/xml/config.xml</p>
+					<pre style="font-size: 50%;">
+&lt;plugin name="Accelerometer" value="org.apache.cordova.AccelListener" /&gt;
+					</pre>
+					<p>Javascript</p>
+					<pre>
+function onSuccess(acceleration) {
+    alert('Acceleration X: ' + acceleration.x + '\n' +
+          'Acceleration Y: ' + acceleration.y + '\n' +
+          'Acceleration Z: ' + acceleration.z + '\n' +
+          'Timestamp: '      + acceleration.timestamp + '\n');
+};
+
+function onError() {
+    alert('onError!');
+};
+
+navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+					</pre>
+				</section>
+				<section>
+					<h2>Phonegap: Brújula</h2>
+					<p>app/res/xml/config.xml</p>
+					<pre style="font-size: 50%;">
+&lt;plugin name="Compass" value="org.apache.cordova.CompassListener" /&gt;
+					</pre>
+					<p>Javascript</p>
+					<pre>
+function onSuccess(heading) {
+    alert('Heading: ' + heading.magneticHeading);
+};
+
+function onError(error) {
+    alert('CompassError: ' + error.code);
+};
+
+navigator.compass.getCurrentHeading(onSuccess, onError);
+					</pre>
+				</section>
+				<section>
+					<h2>Phonegap: GPS</h2>
+					<p>app/AndroidManifest</p>
+					<pre style="font-size: 50%;">
+&lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /&gt;
+					</pre>
+					<p>app/res/xml/config.xml</p>
+					<pre style="font-size: 50%;">
+&lt;plugin name="Geolocation" value="org.apache.cordova.GeoBroker" /&gt;
+					</pre>
+					<p>Javascript</p>
+					<pre>
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+var onSuccess = function(position) {
+	console.log('Latitude: ' + position.coords.latitude);
+	console.log('Longitude: ' + position.coords.longitude);
+	console.log('Altitude: ' + position.coords.altitude);
+	console.log('Accuracy: ' + position.coords.accuracy);
+	console.log('Altitude Accuracy: ' + position.coords.altitudeAccuracy);
+	console.log('Heading: ' + position.coords.heading);
+	console.log('Speed: ' + position.coords.speed);
+	console.log('Timestamp: ' + position.timestamp);
+};
+
+function onError(error) {
+    alert('code: ' + error.code + '. message: ' + error.message);
+}
+					</pre>
+				</section>
+				<section>
+					<section>
+						<h1>La aplicación del Día</h1>
+						<h2>Aplicación No-Oficial Cinépolis</h2>
+						<img src="images/cinepolis-movil.jpg" />
+					</section>
+					<section>
+						<h2>El objetivo</h2>
+						<p>
+							Generar una aplicación móvil que pueda obtener datos reales de la cartelera al día de Cinépolis
+							y mostrarla de una forma ordenada, simple, básica, pero funcional y elegante.
+						</p>
+					</section>
+					<section>
+						<h2>La arquitectura</h2>
+					</section>
+					<section>
+						<h2>Los bocetos</h2>
+					</section>
+					<section>
+						<h2>Mános a la obra</h2>
+						<img src="images/coding.gif" />
+						<h3>a programar !!</h3>
+					</section>
 				</section>
 			</div>
 		</div>
