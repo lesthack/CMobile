@@ -553,6 +553,109 @@
 					<p>Proyecto: App Cinepolis</p>
 				</section>
 				<section>
+					<h2>jquery core $()</h2>
+					<pre>
+// getElementsByTagName
+$("div")
+
+// getElementById
+$("#idobject")
+
+// getElementByClassName
+$(".classname")
+
+// Herencia
+$("ol li")
+$("#root a")
+
+// Precisos
+$("a.menu_item")
+					</pre>
+				</section>
+				<section>
+					<h2>jquery CSS</h2>
+					<pre>
+// Agregando clases
+$("string").addClass("classname");
+
+// Eliminando clases
+$("string").removeClass("classname");
+
+// tiene esta clase ?
+$("string").hasClass("classname");
+
+// Modificación directa del CSS
+$("string").css("propiedad", "valor");
+					</pre>
+				</section>
+				<section>
+					<h2>jquery Core Events</h2>
+					<pre>
+function hola(){
+	alert("Hola mundo");
+}
+
+// Click
+$("button").click(hola);
+
+// Doble Click
+$("button").dblclick(hola);
+
+// Hover
+$("button").hover(hola);
+					</pre>
+				</section>
+				<section>
+					<h2>jquery Anonymous Function</h2>
+					<pre>
+// Click
+$("button").click(function(){
+	alert("Esta es una función anónima");
+});
+					</pre>
+
+				</section>
+				<section>
+					<h2>jquery Callbacks</h2>
+					<pre>
+$.ajax({
+	url: "local/dir",
+	data: {},
+	success: function(data){
+		console.log(data);
+	}
+);
+					</pre>
+				</section>
+				<section>
+					<h2>jquery mobile Events</h2>
+					<pre>
+// tap Event
+$("string").on("tap", function(event){
+		console.log(event);
+	}
+)
+
+// orientation
+$(window).on("orientationchange", function(event){
+		console.log(event);
+	}
+);
+
+// taphold
+$("string").on("taphold", function(event){
+		console.log(event);
+	}
+)
+
+// taphold
+$("string").on("swipeleft", function(event){
+		console.log(event);
+	}
+)
+					</pre>
+				</section>
+				<section>
 					<h2>Usando los recursos del dispositivo</h2>
 					<div class="twocolumn">
 						<img src="images/nexus4.png"  />
