@@ -35,7 +35,20 @@
         <script type="text/javascript">
             app.initialize();
             $(document).ready(function(){
-                console.log("woow");
+                $.ajax({
+                   type: 'GET',
+                    url: "http://ubika.me/ciudades_complejos.json",
+                    async: false,
+                    jsonpCallback: 'jsonCallback',
+                    contentType: "application/json",
+                    dataType: 'jsonp',
+                    success: function(json) {
+                       console.log(json[2]);
+                    },
+                    error: function(e) {
+                       console.log(e.message);
+                    }
+                });
             });
         </script>
     </head>

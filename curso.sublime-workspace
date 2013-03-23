@@ -271,7 +271,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 23626,
+				"buffer_size": 27819,
 				"line_ending": "Unix"
 			}
 		},
@@ -279,7 +279,7 @@
 			"file": "proyects_beta/cinepolis/assets/www/index.html",
 			"settings":
 			{
-				"buffer_size": 4885,
+				"buffer_size": 5394,
 				"line_ending": "Unix"
 			}
 		},
@@ -288,8 +288,7 @@
 			"settings":
 			{
 				"buffer_size": 826,
-				"line_ending": "Unix",
-				"name": "#content {"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -325,6 +324,8 @@
 	},
 	"file_history":
 	[
+		"/home/lesthack/Desktop/cinepolis/cinepolis.py",
+		"/home/lesthack/public_html/CMobile/css/tunning.css",
 		"/home/lesthack/public_html/CMobile/index.html",
 		"/home/lesthack/public_html/curso_movil/package.json",
 		"/home/lesthack/public_html/curso_movil/LICENSE",
@@ -431,7 +432,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -439,15 +440,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 23626,
+						"buffer_size": 27819,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								21281,
-								21281
+								21186,
+								21186
 							]
 						],
 						"settings":
@@ -554,15 +555,15 @@
 					"file": "proyects_beta/cinepolis/assets/www/index.html",
 					"settings":
 					{
-						"buffer_size": 4885,
+						"buffer_size": 5394,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2368,
-								2368
+								2299,
+								2299
 							]
 						],
 						"settings":
@@ -660,7 +661,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 570.0,
+						"translation.y": 555.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -695,7 +696,6 @@
 								"README",
 								"FIXME"
 							],
-							"auto_name": "#content {",
 							"csslint_options":
 							{
 								"adjoining-classes": "warning",
@@ -793,7 +793,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"input":
 	{
