@@ -47,7 +47,7 @@
 
                 $.ajax({
                    type: 'GET',
-                    url: "http://ubika.me/ciudades_complejos.json",
+                    url: "http://api.lesthack.com.mx/cinepolis/ciudades_complejos.json",
                     async: false,
                     jsonpCallback: 'jsonCallback',
                     contentType: "application/json",
@@ -111,7 +111,7 @@
 
                 $.ajax({
                    type: 'GET',
-                    url: "http://ubika.me/complejo_" + id_complejo + ".json",
+                    url: "http://api.lesthack.com.mx/cinepolis/complejo_" + id_complejo + ".json",
                     async: false,
                     jsonpCallback: 'jsonCallback',
                     contentType: "application/json",

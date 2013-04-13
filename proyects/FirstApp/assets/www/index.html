@@ -28,7 +28,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile-1.3.0.css" />
         <link rel="shortcut icon" href="docs/favicon.ico">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <!--link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"-->
 
         <script type="text/javascript" src="cordova-2.4.0.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -36,29 +36,87 @@
         <script type="text/javascript" src="js/jquery.mobile-1.3.0.js"></script>
         <script type="text/javascript">
             app.initialize();
-        </script>
 
+            $(function(){
+                // Depurando en consola
+                console.log("Estamos iniciando bien");
+
+                // $("")
+                console.log( $("#main") );
+                console.log("data-role:" + $("#main").attr("data-role") );
+
+                console.log( $(".ejemplo") );
+                $(".ejemplo").text("Modificado");
+
+                console.log( $("div[data-role=page]").length );
+
+                // Iterando elementos
+                for(var i=0; i < $("#main a").length; i++){
+                    console.log( $($("#main a")[i]).text() );
+                }
+
+                // Declaración de funciones
+                function hola(){
+                    console.log("Hola mundo");
+                }
+
+                // Agregando evento click
+                $("#btn_ejemplo").click(hola);
+
+                // Función Anónima
+                $("#btn_anony").click(function(){
+                    console.log("Hey, estamos dentro de una función anónima.");
+                });
+
+                $("#btn_buttons").click(function(){
+                    $.mobile.changePage("#buttons");
+                    return false;
+                });
+
+                // Callbacks
+                $("#btn_callback").click(function(){
+                    $.ajax({
+                        url: "index.html",
+                        success: function(data){
+                            console.log(data);
+                        }
+                    });
+                });
+
+                // Evento tap
+                $("#btn_tap").on("tap", function(event){
+                    console.log(event.target);
+                });
+
+
+
+            });
+
+        </script>
     </head>
     <body>
         <div data-role="page" id="main">
             <div data-role="header" data-position="fixed" >
-                <h4>Referencia</h4>
+                <h4 class="ejemplo">Referencia</h4>
             </div>
             <div data-role="content">
                 <ul data-role="listview" data-ajax="true" data-inset="true">
                     <li data-role="list-divider">Jquery Mobile</li>
                     <li><a href="#headers_footers" >Headers and Footers</a></li>
-                    <li><a href="#buttons" data-transition="slide">Buttons</a></li>
+                    <li><a href="#" data-transition="slide" id="btn_buttons">Buttons</a></li>
                     <li><a href="#forms" >Forms</a></li>
                     <li><a href="#listviews" >Listviews</a></li>
                     <li><a href="#dialogs" >Dialogs</a></li>
                     <li><a href="#panels" >Panels</a></li>
                     <li><a href="http://jquerymobile.com/demos/1.3.0/" >Otros Controles</a></li>
-
+                    <li><a href="#" id="btn_ejemplo"> Evento Click </a></li>
+                    <li><a href="#" id="btn_anony"> Func Anony </a></li>
+                    <li><a href="#" id="btn_callback"> Callback and ajax </a></li>
+                    <li><a href="#" id="btn_tap"> Tap </a></li>
                 </ul>
             </div>
             <div data-role="footer" data-position="fixed">
-                <h4>MyFirstApp</h4>
+                <h4 class="ejemplo">MyFirstApp</h4>
             </div>
         </div>
         <div data-role="page" id="headers_footers">

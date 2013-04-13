@@ -816,6 +816,154 @@ function onError(error) {
 						<h3>a programar !!</h3>
 					</section>
 				</section>
+
+				<section>
+					<h1>Sesión 3</h1>
+					<h2>Utilerias: Git, Node.js y Socket.io</h2>
+				</section>
+				<section style="font-size: 70%;" class="left">
+					<h2>Hoy Aprenderemos</h2>
+					<p>Uso de Git</p>
+					<ol>
+						<li>Creación de repositorios</li>
+						<li>Entiendo su uso: checkouts, commits y push</li>
+						<li>Los branchs</li>
+					</ol>
+
+					<p style="margin-top: 20px;">Introducción al SDK de Android</p>
+					<ol>
+						<li>Instalar node.js</li>
+						<li>Montar un webservices</li>
+						<li>Como usar los sockets</li>
+					</ol>
+					<p style="margin-top: 20px;">Proyecto: SimpleChat</p>
+				</section>
+				<section>
+					<h2>Git y Github.com</h2>
+					<p style="font-size: 70%;" class="left">At the heart of GitHub is an open source version control system (VCS) called Git*.
+						Created by the same team that created Linux, Git is responsible for everything GitHub related
+						that happens locally on your computer.</p>
+				</section>
+				<section>
+					<h2>Git y Github.com</h2>
+					<ol>
+						<li>Instalar Git en Windows <a href="http://git-scm.com/downloads">[ver]</a></li>
+						<li>Configurar <a href="https://help.github.com/articles/set-up-git">[ver]</a></li>
+						<li>Creando un repositorio <a href="https://github.com/new">[ver]</a></li>
+					</ol>
+				</section>
+				<section>
+					<h2>Add, Commit y otros comandos</h2>
+					<pre>
+git add . # Agrega todo el contenido modificado
+git add README # Agrega solo un archivo
+git commit -a -m "Agregando todo"
+git commit -m "Agregando solo aquel que hizo add"
+git push origin master
+git status
+git log
+git rm
+git mv
+git checkout -- file
+git reset HAED file
+					</pre>
+				</section>
+				<section>
+					<h2>Los Branchs <a href="http://git-scm.com/book/en/Git-Branching-What-a-Branch-Is">[ver]</a></h2>
+					<pre>
+git branch test
+git checkout test
+git checkout -b test # Este es equivalente a los 2 anteiores
+vim README
+git commit -a -m "Modificando README"
+git checkout master
+git merge test
+git branch -d test
+					</pre>
+				</section>
+				<section>
+					<h2>Introducción al desarrollo bajo el</h2>
+				    <h1>SDK de Android</h1>
+				</section>
+				<section>
+				    <h2>Que NO es Android</h2>
+				    <ol style="font-size: 70%;">
+				        <li class="fragment">Un dispositivo móvil</li>
+				        <li class="fragment">Una implementación de JAVA ME</li>
+				        <li class="fragment">Una marca telefónica</li>
+				        <li class="fragment">La contraparte de iPhone por parte de Google</li>
+				    </ol>
+				    <p style="margin-top: 15px;"><small>Nota: Tomada de unos viejos slides de un <a href="http://lesthack.com.mx/util/cursos/Taller_Android.pdf">Taller de Android del 2011</a></small></p>
+				</section>
+				<section>
+				    <h2>Algunas características</h2>
+				    <ol style="font-size: 70%;">
+				        <li class="fragment">
+				        	Comunicación:
+				        	<ol>
+				        	    <li>Navegador Integrado (motor render webkit)</li>
+				        	    <li>Soporte a telefonía GSM</li>
+				        	    <li>Bluetooth, EDGE, 3G, LTE, Wifi.</li>
+				        	</ol>
+				        </li>
+				        <li class="fragment">
+				        	Software:
+				        	<ol>
+				        	    <li>Gráficos basados en OpenGL</li>
+				        	    <li>Engine de Base de datos SQLite</li>
+				        	    <li>API Android Development (emulador, debugger, tools)</li>
+				        	</ol>
+				        </li>
+				        <li class="fragment">
+				        	Hardware:
+				        	<ol>
+				        	    <li>Soporte Multimedia</li>
+				        	    <li>Cámara, Acelerometro</li>
+				        	    <li>GPS, Brújula</li>
+				        	</ol>
+				        </li>
+				    </ol>
+				    <p style="margin-top: 15px;"><small>Nota: Tomada de unos viejos slides de un <a href="http://lesthack.com.mx/util/cursos/Taller_Android.pdf">Taller de Android del 2011</a></small></p>
+				</section>
+				<section>
+				    <h2>Arquitectura</h2>
+				    <a href="images/sdk.png" class="boxImage"><img src="images/sdk.png" width="800px"></a>
+				</section>
+				<section>
+				    <h2>Componentes de una Aplicación</h2>
+				    <ol style="font-size: 70%;">
+				        <li class="fragment">Activity: Componentes representadas con una interfaz gráfica</li>
+				        <li class="fragment">View: Representa la capa de Control</li>
+				        <li class="fragment">Service: Componentes sin interfaz gráfica, corren bajo background.</li>
+				        <li class="fragment">Content Provider: Mecanismo que permite compartir datos entre aplicaciones</li>
+				        <li class="fragment">Broadcast Receiver: Componente destinado a detectar y reaccionar ante determinados mensajes o eventos globales generados por el sistema</li>
+				        <li class="fragment">Widget: Elementos visuales, normalmente interactivos, que pueden mostrarse en la pantalla principal.</li>
+				        <li class="fragment">Intent: Elemento básico de comunicación entre los distintos componentes Android</li>
+				    </ol>
+				</section>
+				<section>
+					<section>
+					    <h2>Lo referente a la resolución</h2>
+				    	<img src="images/size_screen.png" />
+					</section>
+				    <section>
+					    <h2>Lo referente a la resolución</h2>
+				    	<img src="images/density.png" />
+					</section>
+				</section>
+				<section>
+				    <h2>Desarrollando una App sencilla</h2>
+				    <p>Controles:</p>
+				    <ol>
+				        <li>Button</li>
+				        <li>EditText</li>
+				        <li>Toast</li>
+				    </ol>
+				</section>
+				<section>
+				    <h2>Aplicación Sumar</h2>
+				    <img src="images/suma.png" />
+				</section>
 			</div>
 		</div>
 
