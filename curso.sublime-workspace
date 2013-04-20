@@ -275,7 +275,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 33721,
+				"buffer_size": 45123,
 				"line_ending": "Unix"
 			}
 		}
@@ -312,15 +312,15 @@
 	},
 	"file_history":
 	[
+		"/home/lesthack/public_html/CMobile/proyects_beta/cinepolis/assets/www/index.html",
+		"/home/lesthack/public_html/CMobile/index.html",
 		"/home/lesthack/.config/sublime-text-2/Packages/User/lista_html.sublime-snippet",
 		"/home/lesthack/.config/sublime-text-2/Packages/User/section.sublime-snippet",
 		"/home/lesthack/.config/sublime-text-2/Packages/HTML/html.sublime-snippet",
-		"/home/lesthack/public_html/CMobile/index.html",
 		"/home/lesthack/public_html/CMobile/proyects/cinepolis/assets/www/index.html",
 		"/home/lesthack/public_html/CMobile/proyects/FirstApp/assets/www/index.html",
 		"/home/lesthack/programacion/c c++/codigos/c/game/pimpom.c",
 		"/home/lesthack/public_html/CMobile/css/tunning.css",
-		"/home/lesthack/public_html/CMobile/proyects_beta/cinepolis/assets/www/index.html",
 		"/home/lesthack/Desktop/cinepolis/cinepolis.py",
 		"/home/lesthack/public_html/curso_movil/package.json",
 		"/home/lesthack/public_html/curso_movil/LICENSE",
@@ -406,6 +406,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			">",
+			"<",
+			">",
+			"<",
+			">",
+			"<",
+			">",
+			"<",
+			"RadioButton",
+			"<",
+			">",
+			"<",
+			">",
+			"<",
+			">",
+			"<",
 			"<p class",
 			"__str__",
 			"millar",
@@ -417,6 +433,20 @@
 		"regex": false,
 		"replace_history":
 		[
+			"&gt;",
+			"&lt;",
+			"&gt;",
+			"&lt;",
+			"&gt;",
+			"&lt;",
+			"&gt;",
+			"&lt;",
+			"&gt;",
+			"&lt;",
+			"&gt;",
+			"&lt;",
+			"&gt;",
+			"&lt;",
 			"__unicode__"
 		],
 		"reverse": false,
@@ -436,15 +466,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 33721,
+						"buffer_size": 45123,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31537,
-								31537
+								43444,
+								43444
 							]
 						],
 						"settings":
@@ -541,7 +571,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 15875.0,
+						"translation.y": 19562.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

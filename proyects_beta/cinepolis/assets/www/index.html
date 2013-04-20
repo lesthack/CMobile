@@ -36,8 +36,35 @@
         <script type="text/javascript">
             app.initialize();
 
-            $(function(){
+            function loadMain(){
+                $.mobile.loading("show",{
+                    textVisible: false,
+                    theme: "a"
+                });
 
+                // borramos elementos de la lista
+                $("#list_ciudades").children().remove("li");
+
+                // pedimos al servidor lista de ciudades y complejos
+                $.ajax({
+                    type: "GET",
+                    url: "http://api.lesthack.com.mx/cinepolis/ciudades_complejos.json",
+                    async: false,
+                    jsonpCallback: "jsonCallback",
+                    contentType: "application/json",
+                    dataType: "jsonp",
+                    success: function(data_json){
+                        console.log(data_json);
+                    },
+                    error: function(err){
+                        console.log("Error:" + err);
+                    }
+                });
+            }
+
+            $(function(){
+                $.mobile.changePage($("#ciudades"));
+                loadMain();
             });
 
         </script>
@@ -48,7 +75,7 @@
                 <h2>Ciudades</h2>
             </div>
             <div data-role="content">
-                <ul data-role="listview" data-inset="true" data-filter="true">
+                <ul id="list_ciudades" data-role="listview" data-inset="true" data-filter="true">
                     <li><a href="#complejos">Ciudad 1</a></li>
                     <li><a href="#complejos">Ciudad 2</a></li>
                 </ul>

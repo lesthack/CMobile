@@ -123,7 +123,7 @@
 
 				<section>
 					<h3>Contenido</h3>
-					<a id="content_section" href="#">
+					<a id="content_section" href="#/46">
 						<p>Sesión 1</p>
 						<p><small>Android SDK Parte 1</small></p>
 					</a>
@@ -162,7 +162,7 @@
 						<p>Sesión 3</p>
 						<p><small>Git + Utilerias</small></p>
 					</a>
-					<a id="content_section" href="#">
+					<a id="content_section" href="#/46">
 						<p>Sesión 4</p>
 						<p><small>Android SDK Parte 1</small></p>
 					</a>
@@ -964,6 +964,369 @@ git branch -d test
 				<section>
 				    <h2>Aplicación Sumar</h2>
 				    <img src="images/suma.png" />
+				</section>
+
+				<section>
+					<h1>Sesión 4</h1>
+					<h2>Android SDK Parte 1</h2>
+				</section>
+				<section style="font-size: 70%;" class="left">
+					<h2>Hoy Aprenderemos</h2>
+					<p>Funciones básicas</p>
+					<ol>
+						<li>Los Layouts</li>
+						<li>Controles Básicos</li>
+						<li>Controles de Selección</li>
+					</ol>
+					<p style="margin-top: 20px;">Proyecto: Pantalla Login</p>
+					<p style="margin-top: 15px;"><small>Nota: El contenido de esta sesión fue tomado del sitio <a href="http://www.sgoliver.net/blog/?page_id=3011">sgoliver</a> Curso de Programación Android</small></p>
+				</section>
+				<section>
+					<section>
+					    <h2>Los Layouts</h2>
+						<ol>
+							<li>FrameLayout</li>
+							<li>LinearLayout</li>
+							<li>TableLayout</li>
+							<li>GridLayout</li>
+							<li>RelativeLayout</li>
+						</ol>
+					</section>
+					<section>
+					    <h2>FrameLayout</h2>
+				    	<img src="images/layout_framelayout.png">
+				    	<pre style="font-size: 50%; overflow: auto; height: 250px;">
+&lt;FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+
+    &lt;EditText android:id="@+id/TxtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="text" /&gt;
+
+&lt;/FrameLayout&gt;
+				    	</pre>
+
+					</section>
+					<section>
+					    <h2>LinearLayout</h2>
+				    	<img src="images/layout_linearlayout.png">
+				    	<pre style="font-size: 50%; overflow: auto; height: 250px;">
+&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"&gt;
+
+    &lt;EditText android:id="@+id/TxtDato1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="text"
+        android:layout_weight="1" /&gt;
+
+&lt;/LinearLayout&gt;
+				    	</pre>
+
+					</section>
+					<section>
+					    <h2>TableLayout</h2>
+				    	<img src="images/layout_tablelayout.png">
+				    	<pre style="font-size: 50%; overflow: auto; height: 250px;">
+&lt;TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" &gt;
+
+    &lt;TableRow&gt;
+        &lt;TextView android:text="Celda 1.1" /&gt;
+        &lt;TextView android:text="Celda 1.2" /&gt;
+        &lt;TextView android:text="Celda 1.3" /&gt;
+    &lt;/TableRow&gt;
+
+    &lt;TableRow&gt;
+        &lt;TextView android:text="Celda 2.1" /&gt;
+        &lt;TextView android:text="Celda 2.2" /&gt;
+        &lt;TextView android:text="Celda 2.3" /&gt;
+    &lt;/TableRow&gt;
+
+    &lt;TableRow&gt;
+        &lt;TextView android:text="Celda 3.1"
+               android:layout_span="2" /&gt;
+        &lt;TextView android:text="Celda 3.2" /&gt;
+    &lt;/TableRow&gt;
+&lt;/TableLayout&gt;
+				    	</pre>
+					</section>
+					<section>
+					    <h2>GridLayout</h2>
+				    	<pre style="font-size: 50%; overflow: auto; height: 400px;">
+&lt;GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="2"
+    android:columnCount="3"
+    android:orientation="horizontal" &gt;
+
+        &lt;TextView android:text="Celda 1.1" /&gt;
+        &lt;TextView android:text="Celda 1.2" /&gt;
+        &lt;TextView android:text="Celda 1.3" /&gt;
+
+        &lt;TextView android:text="Celda 2.1" /&gt;
+        &lt;TextView android:text="Celda 2.2" /&gt;
+        &lt;TextView android:text="Celda 2.3" /&gt;
+
+        &lt;TextView android:text="Celda 3.1"
+               android:layout_columnSpan="2" /&gt;
+
+        &lt;TextView android:text="Celda 3.2" /&gt;
+
+&lt;/GridLayout&gt;
+				    	</pre>
+					</section>
+					<section>
+					    <h2>RelativeLayout</h2>
+				    	<img src="images/layout_relativelayout.png">
+				    	<pre style="font-size: 50%; overflow: auto; height: 250px;">
+&lt;RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" &gt;
+
+        &lt;EditText android:id="@+id/TxtNombre"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="text" /&gt;
+
+        &lt;Button android:id="@+id/BtnAceptar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TxtNombre"
+            android:layout_alignParentRight="true" /&gt;
+&lt;/RelativeLayout&gt;
+				    	</pre>
+					</section>
+				</section>
+				<section>
+				    <section>
+				        <h2>Controles Básicos</h2>
+				        <ol>
+				            <li>Button</li>
+				            <li>ToggleButton</li>
+				            <li>ImageButton</li>
+				            <li>ImageView</li>
+				            <li>TextView</li>
+				            <li>EditText</li>
+				            <li>CheckBox</li>
+				            <li>RadioButton</li>
+				        </ol>
+				    </section>
+				    <section>
+				        <h2>Button</h2>
+				        <pre>
+&lt;Button android:id="@+id/BtnBoton1"
+    android:text="@string/pulsame"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" /&gt;
+				        </pre>
+				        <pre>
+btnBoton1 = (Button)findViewById(R.id.BtnBoton1);
+
+btnBoton1.setOnClickListener(new View.OnClickListener() {
+    public void onClick(View arg0)
+    {
+        lblMensaje.setText("Botón 1 pulsado!");
+    }
+});
+				        </pre>
+				    </section>
+				    <section>
+				        <h2>ToggleButton</h2>
+				        <pre>
+&lt;ToggleButton android:id="@+id/BtnBoton2"
+    android:textOn="@string/on"
+    android:textOff="@string/off"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" /&gt;
+				        </pre>
+				        <pre>
+btnBoton2 = (ToggleButton)findViewById(R.id.BtnBoton2);
+
+btnBoton2.setOnClickListener(new View.OnClickListener() {
+    public void onClick(View arg0)
+    {
+        if(btnBoton2.isChecked())
+            lblMensaje.setText("Botón 2: ON");
+        else
+            lblMensaje.setText("Botón 2: OFF");
+    }
+});
+				        </pre>
+				    </section>
+				    <section>
+				    	<h2>ImageButton</h2>
+				        <pre>
+&lt;ImageButton android:id="@+id/BtnBoton3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/icono_ok"
+    android:src="@drawable/ok" /&gt;
+				        </pre>
+				        <pre>
+btnBoton3 = (Button)findViewById(R.id.BtnBoton3);
+
+btnBoton3.setOnClickListener(new View.OnClickListener() {
+    public void onClick(View arg0)
+    {
+        lblMensaje.setText("Botón 3 pulsado!");
+    }
+});
+				        </pre>
+				    </section>
+				    <section>
+				        <h2>ImageView</h2>
+				        <pre>
+&lt;ImageView android:id="@+id/ImgFoto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/icon"
+    android:contentDescription="@string/imagen_ejemplo" /&gt;
+				        </pre>
+				        <pre>
+ImageView img= (ImageView)findViewById(R.id.ImgFoto);
+img.setImageResource(R.drawable.icon);
+				        </pre>
+				    </section>
+				    <section>
+				        <h2>TextView</h2>
+				        <pre>
+&lt;TextView android:id="@+id/LblEtiqueta"
+    android:layout_width="matchfill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/escribe_algoEscribe algo:"
+    android:background="#AA44FF"
+    android:typeface="monospace" /&gt;
+				        </pre>
+				        <pre>
+final TextView lblEtiqueta = (TextView)findViewById(R.id.LblEtiqueta);
+String texto = lblEtiqueta.getText().toString();
+texto += "123";
+lblEtiqueta.setText(texto);
+lblEtiqueta.setBackgroundColor(Color.BLUE);
+				        </pre>
+				    </section>
+				    <section>
+				        <h2>EditText</h2>
+				        <pre>
+&lt;EditText android:id="@+id/TxtTexto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:inputType="text" /&gt;
+				        </pre>
+				        <pre>
+final EditText txtTexto = (EditText)findViewById(R.id.TxtTexto);
+String texto = txtTexto.getText().toString();
+txtTexto.setText("Hola mundo!")
+				        </pre>
+				    </section>
+				</section>
+				<section>
+					<section>
+				        <h2>Controles de Selección</h2>
+				        <ol>
+				            <li>Spinner</li>
+				            <li>ListView</li>
+				            <li>GridView</li>
+				        </ol>
+				    </section>
+				    <section>
+				        <h2>Spinner</h2>
+				        <pre>
+&lt;Spinner android:id="@+id/CmbOpciones"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" /&gt;
+				        </pre>
+				        <pre style="font-size: 50%; overflow: auto; height: 350px;">
+cmbOpciones = (Spinner)findViewById(R.id.CmbOpciones);
+
+final String[] datos =
+        new String[]{"Elem1","Elem2","Elem3","Elem4","Elem5"};
+
+ArrayAdapter&lt;String&gt; adaptador =
+        new ArrayAdapter&lt;String&gt;(this,
+            android.R.layout.simple_spinner_item, datos);
+
+adaptador.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
+
+cmbOpciones.setAdapter(adaptador);
+
+cmbOpciones.setOnItemSelectedListener(
+        	new AdapterView.OnItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent,
+                    android.view.View v, int position, long id) {
+                        lblMensaje.setText("Seleccionado: " + datos[position]);
+                }
+
+                public void onNothingSelected(AdapterView<?> parent) {
+                    lblMensaje.setText("");
+                }
+        });
+				        </pre>
+				    </section>
+				    <section>
+				        <h2>ListView</h2>
+				        <pre>
+&lt;ListView android:id="@+id/LstOpciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" /&gt;
+				        </pre>
+				        <pre>
+final String[] datos =
+    new String[]{"Elem1","Elem2","Elem3","Elem4","Elem5"};
+
+ArrayAdapter&lt;String&gt; adaptador =
+    new ArrayAdapter&lt;String&gt;(this,
+        android.R.layout.simple_list_item_1, datos);
+
+lstOpciones = (ListView)findViewById(R.id.LstOpciones);
+
+lstOpciones.setAdapter(adaptador);
+				        </pre>
+				    </section>
+				    <section>
+				        <h2>GridView</h2>
+				        <pre>
+&lt;GridView android:id="@+id/GridOpciones"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:numColumns="auto_fit"
+    android:columnWidth="80px"
+    android:horizontalSpacing="5dp"
+    android:verticalSpacing="10dp"
+    android:stretchMode="columnWidth" /&gt;
+				        </pre>
+				        <pre>
+private String[] datos = new String[25];
+//...
+for(int i=1; i&lt;=25; i++)
+        datos[i-1] = "Dato " + i;
+
+ArrayAdapter&lt;String&gt; adaptador =
+        new ArrayAdapter&lt;String&gt;(this, android.R.layout.simple_list_item_1, datos);
+
+grdOpciones = (GridView)findViewById(R.id.GridOpciones);
+
+grdOpciones.setAdapter(adaptador);
+				        </pre>
+				    </section>
+				</section>
+				<section>
+				    <h2>Aplicación Login</h2>
+				    <p>Simple aplicación que verifica la autenticidad de un usuario</p>
+				    <img src="images/login.png" />
 				</section>
 			</div>
 		</div>
