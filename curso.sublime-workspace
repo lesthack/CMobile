@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"loadC",
+				"loadCartelera"
+			],
+			[
+				"list_",
+				"list_films"
+			],
+			[
+				"load",
+				"loading"
+			],
+			[
+				"cha",
+				"changePage"
+			],
+			[
+				"h2",
+				"h2_filme"
+			],
+			[
+				"im",
+				"img_filme"
+			],
+			[
+				"fil",
+				"filmes"
+			],
+			[
+				"json",
+				"jsonCallback"
+			],
+			[
+				"id_",
+				"id_complejo"
+			],
+			[
+				"the",
+				"theme"
+			],
+			[
+				"text",
+				"textVisible"
+			],
+			[
+				"loa",
+				"loading"
+			],
+			[
+				"list_c",
+				"list_complejos"
+			],
+			[
+				"com",
+				"complejos"
+			],
+			[
+				"list",
+				"listview"
+			],
+			[
+				"id",
+				"id_ciudad"
+			],
+			[
 				"btn_",
 				"btn_buttons"
 			],
@@ -52,10 +116,6 @@
 				"render_to_response"
 			],
 			[
-				"text",
-				"text-align"
-			],
-			[
 				"inlin",
 				"inline-block"
 			],
@@ -98,10 +158,6 @@
 			[
 				"ex",
 				"expire_at"
-			],
-			[
-				"com",
-				"completed"
 			],
 			[
 				"acti",
@@ -248,10 +304,6 @@
 				"margin-top"
 			],
 			[
-				"list",
-				"list-style-image"
-			],
-			[
 				"ma",
 				"margin-top"
 			],
@@ -275,7 +327,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 45123,
+				"buffer_size": 48927,
 				"line_ending": "Unix"
 			}
 		}
@@ -283,9 +335,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 54.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"set",
+				"Set Syntax: Java"
+			],
 			[
 				"instal",
 				"Package Control: Install Package"
@@ -312,15 +368,18 @@
 	},
 	"file_history":
 	[
+		"/home/lesthack/public_html/CMobile/css/tunning.css",
+		"/home/lesthack/public_html/CMobile/css/theme/default.css",
+		"/home/lesthack/public_html/CMobile/css/reveal.css",
+		"/home/lesthack/public_html/CMobile/css/reveal.min.css",
+		"/home/lesthack/public_html/CMobile/proyects/cinepolis/assets/www/index.html",
 		"/home/lesthack/public_html/CMobile/proyects_beta/cinepolis/assets/www/index.html",
 		"/home/lesthack/public_html/CMobile/index.html",
 		"/home/lesthack/.config/sublime-text-2/Packages/User/lista_html.sublime-snippet",
 		"/home/lesthack/.config/sublime-text-2/Packages/User/section.sublime-snippet",
 		"/home/lesthack/.config/sublime-text-2/Packages/HTML/html.sublime-snippet",
-		"/home/lesthack/public_html/CMobile/proyects/cinepolis/assets/www/index.html",
 		"/home/lesthack/public_html/CMobile/proyects/FirstApp/assets/www/index.html",
 		"/home/lesthack/programacion/c c++/codigos/c/game/pimpom.c",
-		"/home/lesthack/public_html/CMobile/css/tunning.css",
 		"/home/lesthack/Desktop/cinepolis/cinepolis.py",
 		"/home/lesthack/public_html/curso_movil/package.json",
 		"/home/lesthack/public_html/curso_movil/LICENSE",
@@ -406,6 +465,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"250px",
+			"javascript",
 			">",
 			"<",
 			">",
@@ -466,15 +527,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 45123,
+						"buffer_size": 48927,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								43444,
-								43444
+								43773,
+								43773
 							]
 						],
 						"settings":
@@ -571,7 +632,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 19562.0,
+						"translation.y": 19627.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

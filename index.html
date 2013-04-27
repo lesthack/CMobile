@@ -995,7 +995,7 @@ git branch -d test
 					<section>
 					    <h2>FrameLayout</h2>
 				    	<img src="images/layout_framelayout.png">
-				    	<pre style="font-size: 50%; overflow: auto; height: 250px;">
+				    	<pre style="font-size: 50%;"><code class="xml">
 &lt;FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -1007,13 +1007,12 @@ git branch -d test
         android:inputType="text" /&gt;
 
 &lt;/FrameLayout&gt;
-				    	</pre>
-
+				    	</code></pre>
 					</section>
 					<section>
 					    <h2>LinearLayout</h2>
 				    	<img src="images/layout_linearlayout.png">
-				    	<pre style="font-size: 50%; overflow: auto; height: 250px;">
+				    	<pre style="font-size: 50%;"><code class="xml">
 &lt;LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -1027,13 +1026,12 @@ git branch -d test
         android:layout_weight="1" /&gt;
 
 &lt;/LinearLayout&gt;
-				    	</pre>
-
+				    	</code></pre>
 					</section>
 					<section>
 					    <h2>TableLayout</h2>
 				    	<img src="images/layout_tablelayout.png">
-				    	<pre style="font-size: 50%; overflow: auto; height: 250px;">
+				    	<pre style="font-size: 50%;"><code class="xml" style="height: 250px;">
 &lt;TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -1057,11 +1055,11 @@ git branch -d test
         &lt;TextView android:text="Celda 3.2" /&gt;
     &lt;/TableRow&gt;
 &lt;/TableLayout&gt;
-				    	</pre>
+				    	</code></pre>
 					</section>
 					<section>
 					    <h2>GridLayout</h2>
-				    	<pre style="font-size: 50%; overflow: auto; height: 400px;">
+				    	<pre style="font-size: 50%; height: 400px;"><code class="xml">
 &lt;GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -1084,12 +1082,12 @@ git branch -d test
         &lt;TextView android:text="Celda 3.2" /&gt;
 
 &lt;/GridLayout&gt;
-				    	</pre>
+				    	</code></pre>
 					</section>
 					<section>
 					    <h2>RelativeLayout</h2>
 				    	<img src="images/layout_relativelayout.png">
-				    	<pre style="font-size: 50%; overflow: auto; height: 250px;">
+				    	<pre style="font-size: 50%;"><code class="xml" style="height: 250px;">
 &lt;RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -1106,7 +1104,7 @@ git branch -d test
             android:layout_below="@id/TxtNombre"
             android:layout_alignParentRight="true" /&gt;
 &lt;/RelativeLayout&gt;
-				    	</pre>
+				    	</code></pre>
 					</section>
 				</section>
 				<section>
@@ -1125,13 +1123,13 @@ git branch -d test
 				    </section>
 				    <section>
 				        <h2>Button</h2>
-				        <pre>
+				        <pre><code class="java">
 &lt;Button android:id="@+id/BtnBoton1"
     android:text="@string/pulsame"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" /&gt;
-				        </pre>
-				        <pre>
+				        </code></pre>
+				        <pre><code class="java">
 btnBoton1 = (Button)findViewById(R.id.BtnBoton1);
 
 btnBoton1.setOnClickListener(new View.OnClickListener() {
@@ -1140,18 +1138,18 @@ btnBoton1.setOnClickListener(new View.OnClickListener() {
         lblMensaje.setText("Botón 1 pulsado!");
     }
 });
-				        </pre>
+				        </code></pre>
 				    </section>
 				    <section>
 				        <h2>ToggleButton</h2>
-				        <pre>
+				        <pre><code class="java">
 &lt;ToggleButton android:id="@+id/BtnBoton2"
     android:textOn="@string/on"
     android:textOff="@string/off"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" /&gt;
-				        </pre>
-				        <pre>
+				        </code></pre>
+				        <pre><code class="java">
 btnBoton2 = (ToggleButton)findViewById(R.id.BtnBoton2);
 
 btnBoton2.setOnClickListener(new View.OnClickListener() {
@@ -1163,18 +1161,18 @@ btnBoton2.setOnClickListener(new View.OnClickListener() {
             lblMensaje.setText("Botón 2: OFF");
     }
 });
-				        </pre>
+				        </code></pre>
 				    </section>
 				    <section>
 				    	<h2>ImageButton</h2>
-				        <pre>
+				        <pre><code class="java">
 &lt;ImageButton android:id="@+id/BtnBoton3"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:contentDescription="@string/icono_ok"
     android:src="@drawable/ok" /&gt;
-				        </pre>
-				        <pre>
+				        </code></pre>
+				        <pre><code class="java">
 btnBoton3 = (Button)findViewById(R.id.BtnBoton3);
 
 btnBoton3.setOnClickListener(new View.OnClickListener() {
@@ -1183,53 +1181,53 @@ btnBoton3.setOnClickListener(new View.OnClickListener() {
         lblMensaje.setText("Botón 3 pulsado!");
     }
 });
-				        </pre>
+				        </code></pre>
 				    </section>
 				    <section>
 				        <h2>ImageView</h2>
-				        <pre>
+				        <pre><code class="java">
 &lt;ImageView android:id="@+id/ImgFoto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:src="@drawable/icon"
     android:contentDescription="@string/imagen_ejemplo" /&gt;
-				        </pre>
-				        <pre>
+				        </code></pre>
+				        <pre><code class="java">
 ImageView img= (ImageView)findViewById(R.id.ImgFoto);
 img.setImageResource(R.drawable.icon);
-				        </pre>
+				        </code></pre>
 				    </section>
 				    <section>
 				        <h2>TextView</h2>
-				        <pre>
+				        <pre><code class="java">
 &lt;TextView android:id="@+id/LblEtiqueta"
     android:layout_width="matchfill_parent"
     android:layout_height="wrap_content"
     android:text="@string/escribe_algoEscribe algo:"
     android:background="#AA44FF"
     android:typeface="monospace" /&gt;
-				        </pre>
-				        <pre>
+				        </code></pre>
+				        <pre><code class="java">
 final TextView lblEtiqueta = (TextView)findViewById(R.id.LblEtiqueta);
 String texto = lblEtiqueta.getText().toString();
 texto += "123";
 lblEtiqueta.setText(texto);
 lblEtiqueta.setBackgroundColor(Color.BLUE);
-				        </pre>
+				        </code></pre>
 				    </section>
 				    <section>
 				        <h2>EditText</h2>
-				        <pre>
+				        <pre><code class="java">
 &lt;EditText android:id="@+id/TxtTexto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:inputType="text" /&gt;
-				        </pre>
-				        <pre>
+				        </code></pre>
+				        <pre><code class="java">
 final EditText txtTexto = (EditText)findViewById(R.id.TxtTexto);
 String texto = txtTexto.getText().toString();
 txtTexto.setText("Hola mundo!")
-				        </pre>
+				        </code></pre>
 				    </section>
 				</section>
 				<section>
@@ -1243,12 +1241,12 @@ txtTexto.setText("Hola mundo!")
 				    </section>
 				    <section>
 				        <h2>Spinner</h2>
-				        <pre>
+				        <pre><code class="java">
 &lt;Spinner android:id="@+id/CmbOpciones"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" /&gt;
-				        </pre>
-				        <pre style="font-size: 50%; overflow: auto; height: 350px;">
+				        </code></pre>
+				        <pre style="font-size: 50%;"><code class="java" style="height: 350px;">
 cmbOpciones = (Spinner)findViewById(R.id.CmbOpciones);
 
 final String[] datos =
@@ -1274,16 +1272,16 @@ cmbOpciones.setOnItemSelectedListener(
                     lblMensaje.setText("");
                 }
         });
-				        </pre>
+				        </code></pre>
 				    </section>
 				    <section>
 				        <h2>ListView</h2>
-				        <pre>
+				        <pre><code class="java">
 &lt;ListView android:id="@+id/LstOpciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" /&gt;
-				        </pre>
-				        <pre>
+				        </code></pre>
+				        <pre><code class="java">
 final String[] datos =
     new String[]{"Elem1","Elem2","Elem3","Elem4","Elem5"};
 
@@ -1294,11 +1292,11 @@ ArrayAdapter&lt;String&gt; adaptador =
 lstOpciones = (ListView)findViewById(R.id.LstOpciones);
 
 lstOpciones.setAdapter(adaptador);
-				        </pre>
+				        </code></pre>
 				    </section>
 				    <section>
 				        <h2>GridView</h2>
-				        <pre>
+				        <pre><code class="java">
 &lt;GridView android:id="@+id/GridOpciones"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -1307,8 +1305,8 @@ lstOpciones.setAdapter(adaptador);
     android:horizontalSpacing="5dp"
     android:verticalSpacing="10dp"
     android:stretchMode="columnWidth" /&gt;
-				        </pre>
-				        <pre>
+				        </code></pre>
+				        <pre><code class="java">
 private String[] datos = new String[25];
 //...
 for(int i=1; i&lt;=25; i++)
@@ -1320,13 +1318,118 @@ ArrayAdapter&lt;String&gt; adaptador =
 grdOpciones = (GridView)findViewById(R.id.GridOpciones);
 
 grdOpciones.setAdapter(adaptador);
-				        </pre>
+				        </code></pre>
 				    </section>
 				</section>
 				<section>
 				    <h2>Aplicación Login</h2>
 				    <p>Simple aplicación que verifica la autenticidad de un usuario</p>
 				    <img src="images/login.png" />
+				</section>
+
+				<section>
+					<h1>Sesión 5</h1>
+					<h2>Android SDK Parte 2</h2>
+				</section>
+				<section style="font-size: 70%;" class="left">
+					<h2>Hoy Aprenderemos</h2>
+					<p>Funciones avanzadas</p>
+					<ol>
+						<li>SQLite</li>
+						<li>Conexión a Base de Datos</li>
+						<li>Manipulación de Base de Datos</li>
+					</ol>
+					<p style="margin-top: 15px;"><small>Nota: El contenido de esta sesión fue tomado del sitio <a href="http://www.sgoliver.net/blog/?page_id=3011">sgoliver</a> Curso de Programación Android</small></p>
+				</section>
+				<section>
+				    <h2>Que es SQLite</h2>
+				    <p class="left"><small>
+				    	Is a relational database management system contained in a small (~350 KB) C programming library.<br><br>
+				    	SQLite is ACID-compliant and implements most of the SQL standard, using a dynamically and weakly typed SQL syntax that does not guarantee the domain integrity.
+				    </small></p>
+				</section>
+				<section>
+					<section>
+						<h2>SQLiteOpenHelper</h2>
+				    	<pre style="font-size: 50%;"><code class="java">
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class UsuariosSQLiteHelper extends SQLiteOpenHelper {
+
+    String sqlCreate = "...";
+
+    public UsuariosSQLiteHelper(Context contexto, String name,
+                               CursorFactory factory, int version) {
+        super(contexto, name, factory, version);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(sqlCreate);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int versionAnterior, int versionNueva) {
+
+    }
+}
+				    	</code></pre>
+					</section>
+				    <section>
+						<h2>SQLiteOpenHelper</h2>
+				    	<pre style="font-size: 50%;"><code class="java">
+import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+
+public class MiActividad extends Activity
+{
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+        UsuariosSQLiteHelper usdbh = new UsuariosSQLiteHelper(this, "MiBasededatos", null, 1);
+
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+
+    }
+}
+			    		</code></pre>
+					</section>
+				</section>
+				<section>
+				    <h2>El primer INSERT SQL</h2>
+				    <pre style="font-size: 50%;"><code class="java">
+db.execSQL("INSERT INTO tabla (campo1,campo2) VALUES ('valor1','valor2') ");
+			    	</code></pre>
+				</section>
+				<section>
+				    <h2>Un poco mas de SQL [UPDATE, DELETE]</h2>
+				    <pre style="font-size: 50%;"><code class="java">
+db.execSQL("DELETE FROM tabla WHERE campo1='valor1' ");
+
+db.execSQL("UPDATE tabla SET campo1='valor1' WHERE campo2='valor2' ");
+					</code></pre>
+				</section>
+				<section>
+				    <h2>Los Cursores</h2>
+				    <pre style="font-size: 50%;"><code class="java">
+String[] args = new String[] {"valor1"};
+Cursor c = db.rawQuery("SELECT * FROM tabla WHERE campo1=? ", args);
+
+if (c.moveToFirst()) {
+
+     do {
+          String campo1 = c.getString(0);
+          String campo2 = c.getString(1);
+     } while(c.moveToNext());
+}
+			    	</code></pre>
 				</section>
 			</div>
 		</div>
