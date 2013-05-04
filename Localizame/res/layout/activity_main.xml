@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+	
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" >
+        
+        <TextView
+            android:text="Latitud: "
+		    android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".30" 
+            />
+        
+    	<TextView
+	    	android:id="@+id/txtlatitud"
+		    android:text="0"
+		    android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".70" />
+    	    
+    </LinearLayout>
+    
+	<LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" >
+    	
+    	<TextView
+            android:text="Longitud: "
+		    android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".30" />
+    	
+		<TextView
+		    android:id="@+id/txtlongitud"
+		    android:text="0"
+		    android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".70" />		
+	</LinearLayout>
+	
+	<Button
+	    android:id="@+id/btnstart"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Start" />
+	
+	<Button
+	    android:id="@+id/btnpush"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:enabled="false"
+	    android:text="Push" />
+	
+	<Button
+	    android:id="@+id/btnshow"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"	    
+	    android:text="Ver" />
+	
+</LinearLayout>
