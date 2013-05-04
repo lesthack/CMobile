@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile-1.3.0.css" />
+        <link rel="shortcut icon" href="docs/favicon.ico">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+        <script type="text/javascript" src="cordova-2.4.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.0.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+
+            var ciudades = {};
+
+            function loadMain(){
+                $.mobile.loading( "show", {
+                    textVisible: false,
+                    theme: "a"
+                });
+
+                $("#list_ciudades").children().remove("li");
+
+                $.ajax({
+                   type: 'GET',
+                    url: "http://api.lesthack.com.mx/cinepolis/ciudades_complejos.json",
+                    async: false,
+                    jsonpCallback: 'jsonCallback',
+                    contentType: "application/json",
+                    dataType: 'jsonp',
+                    success: function(json) {
+                        ciudades = json;
+
+                        for(var id_ciudad in ciudades){
+                            li_ciudad = $("<li/>");
+                            a_ciudad = $("<a/>", {"href":"#complejos", "alt":id_ciudad, "text":ciudades[id_ciudad].nombre}).on("tap", function(event){
+                                loadComplejos( $(event.target).attr("alt") );
+                                return false;
+                            });
+
+                            li_ciudad.append(a_ciudad);
+                            $("#list_ciudades").append(li_ciudad);
+                        }
+
+                        $("#list_ciudades").listview("refresh");
+
+                        $.mobile.loading("hide");
+                    },
+                    error: function(e) {
+                       console.log(e.message);
+                    }
+                });
+            }
+
+            function loadComplejos(id_ciudad){
+                $.mobile.loading( "show", {
+                    textVisible: false,
+                    theme: "a"
+                });
+
+                $("#list_complejos").children().remove("li");
+
+                complejos = ciudades[id_ciudad].complejos;
+
+                for(var i=0; i < complejos.length; i++){
+                    li_complejo = $("<li/>");
+                    a_complejo = $("<a/>", {"href":"#cartelera", "alt":complejos[i].id,"text":complejos[i].complejo}).on("tap", function(event){
+                        loadCartelera($(event.target).attr("alt"));
+                        return false;
+                    });
+                    li_complejo.append(a_complejo);
+                    $("#list_complejos").append(li_complejo);
+                }
+
+                $.mobile.changePage($('#complejos'));
+                $("#list_complejos").listview("refresh");
+                $.mobile.loading("hide");
+            }
+
+            function loadCartelera(id_complejo){
+                $.mobile.loading( "show", {
+                    textVisible: false,
+                    theme: "a"
+                });
+
+                $("#list_films").children().remove("li");
+
+                $.ajax({
+                   type: 'GET',
+                    url: "http://api.lesthack.com.mx/cinepolis/complejo_" + id_complejo + ".json",
+                    async: false,
+                    jsonpCallback: 'jsonCallback',
+                    contentType: "application/json",
+                    dataType: 'jsonp',
+                    success: function(json) {
+                        console.log(json);
+
+                        $("#nombre_complejo").html(json.nombre_complejo);
+                        $("#descripcion_complejo").html(json.descripcion);
+
+                        var filmes = json.filmes;
+
+                        for(var i=0; i < filmes.length; i++){
+                            var src_img_filme = "http://www.cinepolis.com.mx/Imagenes/Peliculas/" + filmes[i].nombre.split("-")[0].replace("Dig","").replace("IMAX","").replace("4DX","").replace("Dob","").replace("3D","").replace("Sub","").replace("Esp","").replace(/^\s+|\s+$/g, '').replace(/[^\w\s]/gi, '').replace(/ /g,"-") + "-cartel.jpg";
+
+                            li_filme = $("<li/>");
+                            a_filme = $("<a/>", { "href":filmes[i].link });
+                            img_filme = $("<img/>", { "src": src_img_filme })
+                            h2_filme = $("<h2/>", { "text":filmes[i].nombre });
+                            p_filme = $("<p/>", { "html":filmes[i].descripcion })
+
+                            a_filme.append(img_filme);
+                            a_filme.append(h2_filme);
+                            a_filme.append(p_filme);
+                            li_filme.append(a_filme);
+
+                            $("#list_films").append(li_filme);
+                        }
+
+                        $.mobile.changePage($('#cartelera'));
+                        $.mobile.loading("hide");
+                    },
+                    error: function(e) {
+                       console.log(e.message);
+                    }
+                });
+            }
+
+            $(function(){
+                $.mobile.changePage($('#ciudades'));
+                loadMain();
+            });
+
+
+
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="ciudades" >
+            <div data-role="header" data-position="fixed" data-theme="b" >
+                <h4>Cinepolis</h4>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" data-filter="true" id="list_ciudades">
+
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <h4>Ciudades</h4>
+            </div>
+        </div>
+        <div data-role="page" id="complejos" >
+            <div data-role="header" data-position="fixed" data-theme="b" >
+                <h4>Cinepolis</h4>
+                <a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" class="ui-btn-right"></a>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" data-filter="true" id="list_complejos">
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <h4>Complejos</h4>
+            </div>
+        </div>
+        <div data-role="page" id="cartelera" >
+            <div data-role="header" data-position="fixed" data-theme="b" >
+                <h4 id="nombre_complejo">Cinepolis</h4>
+                <a href="#" data-role="button" data-rel="back" data-icon="back" data-iconpos="notext" class="ui-btn-right"></a>
+            </div>
+            <div data-role="content">
+                <h2 id="descripcion_complejo"></h2>
+                <ul data-role="listview" data-inset="true" data-filter="true" id="list_films">
+                    <li>
+                        <a href="#">
+                            <img src="http://ia.media-imdb.com/images/M/MV5BOTI2ODA3MTc4MF5BMl5BanBnXkFtZTYwMzUwMjU5._V1_SX214_.jpg" />
+                            <h2>Pi</h2>
+                            <p>Pelicula que narra la vida de ....</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://ia.media-imdb.com/images/M/MV5BOTI2ODA3MTc4MF5BMl5BanBnXkFtZTYwMzUwMjU5._V1_SX214_.jpg" />
+                            <h2>Pi</h2>
+                            <p>Pelicula que narra la vida de ....</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <h4>Cartelera</h4>
+            </div>
+        </div>
+    </body>
+</html>
