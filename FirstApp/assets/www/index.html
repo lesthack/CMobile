@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <title>MyFirstApp</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/themes/default/jquery.mobile-1.3.0.css" />
+        <link rel="shortcut icon" href="docs/favicon.ico">
+        <!--link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"-->
+
+        <script type="text/javascript" src="cordova-2.4.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.0.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+
+            $(function(){
+                // Depurando en consola
+                console.log("Estamos iniciando bien");
+
+                // $("")
+                console.log( $("#main") );
+                console.log("data-role:" + $("#main").attr("data-role") );
+
+                console.log( $(".ejemplo") );
+                $(".ejemplo").text("Modificado");
+
+                console.log( $("div[data-role=page]").length );
+
+                // Iterando elementos
+                for(var i=0; i < $("#main a").length; i++){
+                    console.log( $($("#main a")[i]).text() );
+                }
+
+                // Declaración de funciones
+                function hola(){
+                    console.log("Hola mundo");
+                }
+
+                // Agregando evento click
+                $("#btn_ejemplo").click(hola);
+
+                // Función Anónima
+                $("#btn_anony").click(function(){
+                    console.log("Hey, estamos dentro de una función anónima.");
+                });
+
+                $("#btn_buttons").click(function(){
+                    $.mobile.changePage("#buttons");
+                    return false;
+                });
+
+                // Callbacks
+                $("#btn_callback").click(function(){
+                    $.ajax({
+                        url: "index.html",
+                        success: function(data){
+                            console.log(data);
+                        }
+                    });
+                });
+
+                // Evento tap
+                $("#btn_tap").on("tap", function(event){
+                    console.log(event.target);
+                });
+
+
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="main">
+            <div data-role="header" data-position="fixed" >
+                <h4 class="ejemplo">Referencia</h4>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-ajax="true" data-inset="true">
+                    <li data-role="list-divider">Jquery Mobile</li>
+                    <li><a href="#headers_footers" >Headers and Footers</a></li>
+                    <li><a href="#" data-transition="slide" id="btn_buttons">Buttons</a></li>
+                    <li><a href="#forms" >Forms</a></li>
+                    <li><a href="#listviews" >Listviews</a></li>
+                    <li><a href="#dialogs" >Dialogs</a></li>
+                    <li><a href="#panels" >Panels</a></li>
+                    <li><a href="http://jquerymobile.com/demos/1.3.0/" >Otros Controles</a></li>
+                    <li><a href="#" id="btn_ejemplo"> Evento Click </a></li>
+                    <li><a href="#" id="btn_anony"> Func Anony </a></li>
+                    <li><a href="#" id="btn_callback"> Callback and ajax </a></li>
+                    <li><a href="#" id="btn_tap"> Tap </a></li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4 class="ejemplo">MyFirstApp</h4>
+            </div>
+        </div>
+        <div data-role="page" id="headers_footers">
+            <div data-role="header" data-position="fixed">
+                <a href="#" data-role="button" data-icon="grid" data-mini="true" data-iconpos="notext">Config</a>
+                <h4>Headers Footers</h4>
+                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
+            </div>
+            <div data-role="content">
+
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+        <div data-role="page" id="buttons">
+            <div data-role="header" data-position="fixed">
+                <h4>Buttons</h4>
+            </div>
+            <div data-role="content">
+                <a href="#" data-role="button">Tipo link</a>
+                <button>Tipo button</button>
+                <form>
+                    <input type="submit" value="Tipo Input-button" />
+                </form>
+                <hr/>
+                <a href="#" data-role="button" data-inline="true">Si</a>
+                <a href="#" data-role="button" data-inline="true">No</a>
+                <hr/>
+                <a href="#" data-role="button" data-inline="true" data-theme="a">Tema A</a>
+                <a href="#" data-role="button" data-inline="true" data-theme="b">Tema B</a>
+                <hr/>
+                <a href="#" data-role="button" data-inline="true" data-mini="true">Button mini</a>
+                <hr/>
+                Iconos:
+                <a href="#" data-role="button" data-icon="plus" data-iconpos="notext" data-theme="c" data-inline="true">Plus</a>
+                <a href="#" data-role="button" data-icon="minus" data-iconpos="notext" data-theme="c" data-inline="true">Minus</a>
+                <a href="#" data-role="button" data-icon="grid" data-iconpos="right" data-theme="c" data-inline="true">right</a>
+                <hr/>
+                <div data-role="controlgroup">
+                    <a href="#" data-role="button">Botón 1</a>
+                    <a href="#" data-role="button" data-icon="grid" data-iconpos="right">Botón con icon</a>
+                </div>
+                <hr/>
+                <div data-role="controlgroup" data-type="horizontal" data-mini="false">
+                    <a href="#" data-role="button" data-iconpos="notext" data-icon="check">Si</a>
+                    <a href="#" data-role="button" data-iconpos="notext" data-icon="back">No</a>
+                    <a href="#" data-role="button" data-iconpos="notext" data-icon="grid">Tal vez</a>
+                </div>
+                <hr/>
+                <a href="#" data-role="button" data-icon="back" data-rel="back">Regresar</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+        <div data-role="page" id="forms">
+            <div data-role="header" data-position="fixed">
+                <h4>Forms</h4>
+                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
+            </div>
+            <div data-role="content">
+                <form id="formulario" name="formulario" action="">
+                    <p>slider:</p>
+                    <input type="range" id="rango" name="rango" value="50" min="0" max="100" step="10" data-mini="true" data-theme="b" data-track-theme="a" />
+                    <p>range slider</p>
+                    <div data-role="rangeslider" data-mini="true" data-theme="b">
+                        <input type="range" name="range-1a" id="range-1a" min="0" max="100" value="40">
+                        <input type="range" name="range-1b" id="range-1b" min="0" max="100" value="80">
+                    </div>
+                    <p>Flip Switch</p>
+                    <select name="slider" id="slider" data-role="slider" data-mini="true">
+                        <option value="off">Off</option>
+                        <option value="on" selected="selected">On</option>
+                    </select>
+                    <p>Checkbox</p>
+                    <input type="checkbox" name="checkbox-mini-0" id="checkbox-mini-0" data-mini="true">
+                    <label for="checkbox-mini-0">I agree</label>
+                    <fieldset data-role="controlgroup" data-type="vertical" data-iconpos="right" data-mini="true">
+                        <input type="checkbox" name="uno" id="uno" data-theme="a"><label for="uno">Uno</label>
+                        <input type="checkbox" name="dos" id="dos" ><label for="dos">dos</label>
+                        <input type="checkbox" name="tres" id="tres" ><label for="tres">tres</label>
+                    </fieldset>
+                    <p>Radiobuttons</p>
+                    <input type="radio" name="radio-mini-0" id="radio-mini-0" data-mini="true">
+                    <label for="radio-mini-0">I agree</label>
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-iconpos="left" data-mini="true">
+                        <input type="radio" name="radios" id="radiouno" ><label for="radiouno">Uno</label>
+                        <input type="radio" name="radios" id="radiodos" ><label for="radiodos">dos</label>
+                        <input type="radio" name="radios" id="radiotres" ><label for="radiotres">tres</label>
+                    </fieldset>
+                    <p>Text</p>
+                    <label>Ejemplo:</label>
+                    <input type="text" data-clear-btn="true" id="" name="" placeholder="Introduce cualquier texto" />
+                    <label>Buscar:</label>
+                    <input type="search" data-clear-btn="true" id="" name="" />
+                    <label>Area de Texto:</label>
+                    <textarea id="" name=""></textarea>
+                    <label>Fecha</label>
+                    <input type="date" data-clear-btn="true" name="" id="" value="" />
+                    <label for="color-1">Color:</label>
+                    <input type="color" data-clear-btn="false" name="color-1" id="color-1" value="">
+                </form>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+        <div data-role="page" id="listviews">
+            <div data-role="header" data-position="fixed">
+                <h4>Listviews</h4>
+                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-filter="true" data-filter-placeholder="Search..." data-filter-reveal="false" data-autodividers="true" id="listautos">
+                    <li><a href="#">Acura <span class="ui-li-count">12</span></a></li>
+                    <li data-icon="plus" ><a href="#">Audi</a></li>
+                    <li><a href="#">BMW</a></li>
+                    <li><a href="#">Cadillac</a></li>
+                    <li><a href="#">Ferrari</a></li>
+                    <li><a href="#"><img src="img/us.png" alt="United States" class="ui-li-icon ui-corner-none">Estados Unidos de America</a></li>
+                </ul>
+                <br><br><br><br><br>
+                <ul data-role="listview" data-split-icon="gear" data-split-theme="d" id="listmusic">
+                    <li>
+                        <a href="#">
+                            <img src="http://userserve-ak.last.fm/serve/500/86730137/The+Dark+Side+of+the+Moon.png">
+                            <h2>The Dark Side of the Moon</h2>
+                            <p>Pink Floyd</p>
+                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://userserve-ak.last.fm/serve/_/86849647/The+Wall.jpg">
+                            <h2>The Wall</h2>
+                            <p>Pink Floyd</p>
+                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://userserve-ak.last.fm/serve/500/76962774/The+Piper+at+the+Gates+of+Dawn.jpg">
+                            <h2>The Piper at the Gates of Dawn</h2>
+                            <p>Pink Floyd</p>
+                            <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                        </a>
+                    </li>
+                </ul>
+                <br><br><br><br><br>
+                <a href="http://jquerymobile.com/demos/1.3.0/docs/widgets/listviews/#list-formatted" target="_blank" data-role="button">More</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+        <div data-role="page" id="dialogs">
+            <div data-role="header" data-position="fixed">
+                <h4>Dialogs</h4>
+                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
+            </div>
+            <div data-role="content">
+                <a href="#testdialog" data-rel="dialog" data-role="button">Open dialog</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+        <div data-role="dialog" id="testdialog" data-theme="c" data-corners="true">
+            <div data-role="header">
+                <h1>Dialog</h1>
+            </div>
+            <div data-role="content">
+                <h1>Continuar</h1>
+                <p>Este es un ejemplo de como usar un Dialog.</p>
+                <a href="dialog/index.html" data-role="button" data-rel="back" data-theme="b">Aceptar</a>
+                <a href="dialog/index.html" data-role="button" data-rel="back" data-theme="c">Cancelar</a>
+            </div>
+        </div>
+        <div data-role="page" id="panels">
+            <div data-role="panel" id="mypanel" data-display="push" data-position="right">
+                Ejemplo panel
+            </div>
+            <div data-role="header" data-position="fixed">
+                <h4>Panel</h4>
+                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
+            </div>
+            <div data-role="content">
+                <a href="#mypanel" data-role="button">Ejemplo</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+        <div data-role="page" id="accordion">
+            <div data-role="header" data-position="fixed">
+                <h4>Forms</h4>
+                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
+            </div>
+            <div data-role="content">
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+        <div data-role="page" id="accordion">
+            <div data-role="header" data-position="fixed">
+                <h4>Accordion</h4>
+                <a href="#" data-role="button" data-icon="back" data-mini="true" data-iconpos="notext" data-rel="back" class="ui-btn-right">Back</a>
+            </div>
+            <div data-role="content">
+                <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-mini="true">
+                    <div data-role="collapsible">
+                        <h3>Icon set on the set</h3>
+                        <p>Specify the open and close icons on the set to apply it to all the collapsibles within.</p>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Icon set on the set</h3>
+                        <p>This collapsible also gets the icon from the set.</p>
+                    </div>
+                    <div data-role="collapsible" data-collapsed-icon="gear" data-expanded-icon="delete">
+                        <h3>Icon set on this collapsible</h3>
+                        <p>The icons here are applied to this collapsible specifically, thus overriding the set icons.</p>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h4>MyFirstApp</h4>
+            </div>
+        </div>
+    </body>
+</html>
+
