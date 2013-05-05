@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DataBaseOpenHelper extends SQLiteOpenHelper {
 
 	private static String DB_NAME = "dblocalizame";
-	String sqlCreate = "";
+	String sqlCreate = "CREATE TABLE points(latitud TEXT, longitud TEXT)";
 	
 	public DataBaseOpenHelper(Context context) {
 		super(context, DB_NAME, null, 3);
@@ -28,7 +28,12 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
 	}
 	
 	public void addPoint(String latitud, String longitud){
+		SQLiteDatabase db = this.getWritableDatabase();
 		
+		String[] args = new String[]{latitud, longitud};
+		db.execSQL("INSERT INTO points(latitud, longitud) VALUES(?, ?)", args);
+		
+		db.close();
 	}
 
 }

@@ -73,7 +73,17 @@ public class MainActivity extends Activity {
                 }
 			}
 			
-		});		
+		});
+		
+		btnpush.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				dbconnection.addPoint(txtlatitud.getText().toString(), txtlongitud.getText().toString());
+				Toast.makeText(v.getContext(), String.format("Agregado %s,%s", txtlatitud.getText().toString(), txtlongitud.getText().toString()), Toast.LENGTH_SHORT).show();
+			}
+		});
 		
 		btnshow.setOnClickListener(new View.OnClickListener() {
 			
